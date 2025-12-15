@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jeu Monty Hall - Terra Numerica</title>
+  <link rel="icon" href="https://terra-numerica.org/files/2020/10/cropped-favicon-rond.png" />
+
+  <!-- ici j'applique d'abord les feuilles de style fournies par Terra Numerica -->
+  <link rel="stylesheet" href="./framework/css/BannerStyle.css" />
+  <link rel="stylesheet" href="./framework/css/ModalStyle.css" />
+
+  <!-- ensuite je charge mon propre style pour surcharger / compléter le framework -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Bannière Terra Numerica -->
+  <div id="navbar0" class="navbar">
+    <a href="https://portail.terra-numerica.org/games" class="no_hover">
+      <img src="https://terra-numerica.org/files/2020/10/cropped-favicon-rond.png" alt="Terra Numerica" style="width: 40px; vertical-align: middle;">
+    </a>
+    <button type="button" class="child" id="btn-accueil">🏠 Accueil</button>
+    <button type="button" class="child" id="btn-stats">📊 Statistiques</button>
+    <button type="button" class="child" id="btn-rejouer-top">🔄 Rejouer</button>
+  </div>
+  <!-- Contenu principal -->
+  <div id="container0">
+    <main class="terra-app-shell">
+      <section class="terra-card" aria-live="polite">
+        <div class="terra-card__head">
+          <h1>🎯 Monty Hall</h1>
+          <p>Je t'invite à tester, comparer et ressentir le pouvoir du switch.</p>
+        </div>
+
+        <div id="jeu" class="scene3d-container">
+          <!-- Canvas Three.js généré dynamiquement -->
+        </div>
+
+        <p id="message">Choisis une porte&nbsp;!</p>
+
+        <button id="rejouer" class="btn-principal" aria-live="assertive">🔁 Rejouer</button>
+      </section>
+    </main>
+  </div>
+
+  <!-- Three.js global (compatible file://) + script non-module -->
+  <script src="https://unpkg.com/three@0.152.2/build/three.min.js"></script>
+  <script src="ma in-nomodule.js"></script>
+</body>
+</html>

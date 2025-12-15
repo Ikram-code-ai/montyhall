@@ -1,0 +1,270 @@
+/* ===========================
+   ambiance générale Terra Numerica
+   =========================== */
+
+:root {
+  --terra-deep-blue: #0b2b57;
+  --terra-mid-blue: #1261c4;
+  --terra-light-blue: #1ea3ff;
+  --terra-sun: #f8b400;
+  --terra-success: #38c586;
+  --terra-shadow: rgba(7, 27, 61, 0.2);
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-image: url("./framework/textures/wall.jpg");
+  background-size: 300px auto;
+  background-repeat: repeat;
+  background-attachment: fixed;
+  color: var(--terra-deep-blue);
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Bannière Terra Numerica en haut */
+#navbar0 {
+  background-color: rgba(36, 161, 235, 255);
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+#navbar0 a.no_hover {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+#navbar0 button.child {
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: rgba(36, 161, 235, 255);
+  color: white;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.2s;
+  float: left;
+}
+
+#navbar0 button.child:hover {
+  background-color: #f9bb12;
+  transform: translateY(-2px);
+}
+
+#navbar0 button.child:active {
+  transform: translateY(0);
+}
+
+#navbar0 a:hover {
+  background-color: transparent !important;
+}
+
+/* Conteneur principal */
+#container0 {
+  width: 100%;
+  min-height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+}
+
+.terra-app-shell {
+  width: min(1100px, 100%);
+  margin: 0 auto;
+  padding: 60px 24px 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  box-sizing: border-box;
+}
+
+.terra-hero {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 18px;
+  padding: 24px 28px;
+  box-shadow: 0 12px 30px rgba(19, 60, 117, 0.15);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.terra-card {
+  background: transparent;
+  border-radius: 0;
+  padding: 0 32px 48px;
+  box-shadow: none;
+  text-align: center;
+}
+
+.terra-card__head h1 {
+  margin: 0 0 12px;
+  font-size: clamp(32px, 6vw, 44px);
+  color: var(--terra-mid-blue);
+}
+
+.terra-card__head p {
+  margin: 0;
+  color: #1d3d6d;
+  font-size: 18px;
+}
+
+/* ancien conteneur 2D des portes remplacé par la scène 3D */
+.portails { display: none; }
+
+.porte {
+  width: 180px;
+  height: 220px;
+  border-radius: 16px;
+  border: none;
+  background: linear-gradient(160deg, #0f4d99, #1ea3ff);
+  color: #ffffff;
+  font-size: 72px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 24px 48px var(--terra-shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease,
+    background 0.25s ease;
+  position: relative;
+}
+
+.porte:hover:not(:disabled) {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 30px 60px rgba(10, 42, 97, 0.3);
+}
+
+.porte:disabled {
+  cursor: default;
+  filter: grayscale(0.15);
+}
+
+.porte.gagne {
+  background: linear-gradient(160deg, var(--terra-success), #8cf0b7);
+  color: #0b3015;
+}
+
+.porte.perdu {
+  background: linear-gradient(160deg, #8c4a3b, #f0774d);
+}
+
+.porte.selectionnee {
+  outline: 4px solid rgba(255, 255, 255, 0.8);
+  transform: translateY(-8px);
+}
+
+.porte.ouverte {
+  background: linear-gradient(160deg, #434449, #7a7c80);
+}
+
+#message {
+  margin: 24px auto 32px;
+  font-size: 24px;
+  color: var(--terra-deep-blue);
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.8), rgba(210, 229, 255, 0.8));
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 999px;
+  box-shadow: 0 18px 40px rgba(13, 57, 125, 0.12);
+}
+
+.btn-principal {
+  border: none;
+  border-radius: 16px;
+  padding: 16px 54px;
+  font-size: 22px;
+  background: linear-gradient(120deg, var(--terra-sun), #ffdd6a);
+  color: #0d2342;
+  cursor: pointer;
+  box-shadow: 0 20px 44px rgba(248, 180, 0, 0.35);
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.btn-principal:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 30px 56px rgba(248, 180, 0, 0.45);
+}
+
+.btn-principal:active {
+  transform: translateY(0);
+  box-shadow: 0 14px 30px rgba(248, 180, 0, 0.4);
+}
+
+.tn-nav-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin: 32px auto 24px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 900px) {
+  #navbar0 {
+    flex-wrap: wrap;
+    padding: 8px 12px;
+  }
+
+  .terra-app-shell {
+    padding: 40px 16px 48px;
+  }
+
+  .terra-card {
+    padding: 32px 18px;
+  }
+
+  .portails {
+    gap: 24px;
+  }
+
+  .porte {
+    width: 150px;
+    height: 190px;
+  }
+}
+
+@media (max-width: 560px) {
+  .porte {
+    width: 130px;
+    height: 170px;
+    font-size: 58px;
+  }
+
+  #message {
+    font-size: 20px;
+  }
+}
+
+/* Conteneur de la scène 3D */
+.scene3d-container {
+  width: 100%;
+  height: 600px;
+  margin: 40px auto 32px;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.35);
+  background: #87ceeb;
+}
+.scene3d-container canvas { width: 100% !important; height: 100% !important; display:block; }
+
+@media (max-width: 900px) {
+  .scene3d-container {
+    height: 400px;
+  }
+}
+
+@media (max-width: 560px) {
+  .scene3d-container {
+    height: 300px;
+  }
+}
