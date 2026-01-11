@@ -1,7 +1,5 @@
 # Migration of the Monty Hall Game - From Scratch to TypeScript/Three.js
 
-![Terra Numerica Logo](framework/img/logo_tn.png) *Note: Add correct path to logo if available*
-
 ## About the Project
 
 This project is part of a tutorship within the **DS4H (Digital Systems for Humans)** program at **Université Côte d'Azur**, in partnership with **Terra Numerica**.
