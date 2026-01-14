@@ -19,6 +19,11 @@ coverage/
 .env
 .env.*.local
 
+# Project specific exclusions (User Request)
+rapport_tutorship.tex
+presentation_guide.tex
+presentation_outline.md
+
 # IDE / OS
 .vscode/
 .DS_Store
