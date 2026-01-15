@@ -215,6 +215,9 @@
       g.userData.baseY = -0.5;
       g.userData.phase = Math.random() * Math.PI * 2;
       
+      // on reduit un peu la taille pour eviter qu'elles traversent la porte
+      g.scale.set(0.65, 0.65, 0.65);
+
       return g;
     }
     
